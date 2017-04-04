@@ -17,7 +17,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
 
-  <link rel="stylesheet" href="/adminlte/plugins/datatables/dataTables.bootstrap.css">
+  @stack('styles')
 
   <!-- Theme style -->
   <link rel="stylesheet" href="/adminlte/css/AdminLTE.min.css">
@@ -377,18 +377,10 @@ desired effect
 <!-- Bootstrap 3.3.6 -->
 <script src="/adminlte/bootstrap/js/bootstrap.min.js"></script>
 
-<!-- Datatables js -->
-<script src="/adminlte/plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="/adminlte/plugins/datatables/dataTables.bootstrap.min.js"></script>
+@stack('scripts')
 
 <!-- AdminLTE App -->
 <script src="/adminlte/js/app.min.js"></script>
-
-<script>
-  $(function () {
-    $("#posts-table").DataTable();
-  });
-</script>
 
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the

@@ -6,7 +6,7 @@
 	<small>Listado</small>
 </h1>
 <ol class="breadcrumb">
-	<li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
+	<li><a href="{{ route('dashboard') }}"><i class="fa fa-dashboard"></i> Inicio</a></li>
 	<li class="active">Posts</li>
 </ol>
 @stop
@@ -48,3 +48,19 @@
 </div>
 <!-- /.box -->
 @stop
+
+@push('styles')
+	<link rel="stylesheet" href="/adminlte/plugins/datatables/dataTables.bootstrap.css"> 
+@endpush
+
+@push('scripts')
+	<script src="/adminlte/plugins/datatables/jquery.dataTables.min.js"></script>
+	<script src="/adminlte/plugins/datatables/dataTables.bootstrap.min.js"></script>
+	<script>
+		$(function () {
+			$("#posts-table").DataTable();
+		});
+	</script>
+@endpush
+
+
