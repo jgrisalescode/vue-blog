@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
@@ -19,4 +20,14 @@ class Post extends Model
     {
     	return $this->belongsToMany(Tag::class);
     }
+
+    public function scopePublished($query)
+    {
+        $query->whereNotNull('published_at')
+                 ->where('published_at', '<=', Carbon::now() )
+                 ->latest('published_at');
+    }
+
+
+
 }
