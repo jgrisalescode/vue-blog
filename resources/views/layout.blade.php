@@ -5,10 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>Sitio de ejemplo</title>
-    <link href="css/normalize.css" rel="stylesheet">
-    <link href="css/framework.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/responsive.css" rel="stylesheet">
+    <link href="/css/normalize.css" rel="stylesheet">
+    <link href="/css/framework.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/responsive.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -23,14 +23,14 @@
   <header class="space-inter">
     <div class="container container-flex space-between">
       <figure class="logo">
-        <img src="img/logo.png" alt="">
+        <img src="/img/logo.png" alt="">
       </figure>
       <nav class="custom-wrapper" id="menu">
         <div class="pure-menu">
           <a href="#" class="custom-toggle btn-bar" id="toggle"></a>
         </div>
         <ul class="container-flex list-unstyled">
-          <li class="pure-menu-item"><a href="#" class="pure-menu-link c-gris-2 text-uppercase active">Home</a></li>
+          <li class="pure-menu-item"><a href="/" class="pure-menu-link c-gris-2 text-uppercase active">Home</a></li>
           <li class="pure-menu-item"><a href="#" class="pure-menu-link c-gris-2 text-uppercase">About</a></li>
           <li class="pure-menu-item"><a href="#" class="pure-menu-link c-gris-2 text-uppercase">Archive</a></li>
           <li class="pure-menu-item"><a href="#" class="pure-menu-link c-gris-2 text-uppercase">Contact</a></li>
@@ -57,7 +57,7 @@
   <section class="footer">
     <footer>
     <div class="container">
-      <figure class="logo"><img src="img/logo.png" alt=""></figure>
+      <figure class="logo"><img src="/img/logo.png" alt=""></figure>
       <nav>
         <ul class="container-flex space-center list-unstyled">
           <li><a href="#" class="c-gris-2 text-uppercase active">home</a></li>
