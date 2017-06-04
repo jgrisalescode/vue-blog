@@ -4,7 +4,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Sitio de ejemplo</title>
+    <title>@yield('meta-title', config('app.name') . " | Blog")</title>
+    <meta name="description" content="@yield('meta-description', 'Este es el blog de Zendero')">
     <link href="/css/normalize.css" rel="stylesheet">
     <link href="/css/framework.css" rel="stylesheet">
     <link href="/css/style.css" rel="stylesheet">
