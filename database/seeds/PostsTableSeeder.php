@@ -1,5 +1,6 @@
 <?php
 
+use App\Tag;
 use App\Post;
 use App\Category;
 use Carbon\Carbon;
@@ -15,7 +16,8 @@ class PostsTableSeeder extends Seeder
     public function run()
     {
     	Post::truncate();
-    	Category::truncate();
+        Category::truncate();
+    	Tag::truncate();
 
     	$category = new Category;
     	$category->name = "Categoría 1";
@@ -34,6 +36,8 @@ class PostsTableSeeder extends Seeder
         $post->category_id = 1;
         $post->save();
 
+        $post->tags()->attach(Tag::create(['name' => 'etiqueta 1']));
+
 		$post = new Post;
         $post->title = "Mi segundo post";
         $post->url = str_slug("Mi segundo post");
@@ -43,6 +47,7 @@ class PostsTableSeeder extends Seeder
         $post->category_id = 1;
         $post->save();
 
+        $post->tags()->attach(Tag::create(['name' => 'etiqueta 2']));
 
         $post = new Post;
         $post->title = "Mi tercer post";
@@ -53,6 +58,8 @@ class PostsTableSeeder extends Seeder
         $post->category_id = 2;
         $post->save();
 
+        $post->tags()->attach(Tag::create(['name' => 'etiqueta 3']));
+
         $post = new Post;
         $post->title = "Mi cuarto post";
         $post->url = str_slug("Mi cuarto post");
@@ -62,7 +69,7 @@ class PostsTableSeeder extends Seeder
         $post->category_id = 2;
         $post->save();
 
-
+        $post->tags()->attach(Tag::create(['name' => 'etiqueta 4']));
 
     }
 }
