@@ -83,6 +83,9 @@
 					{!! $errors->first('excerpt', '<span class="help-block">:message</span>') !!}	
 				</div>
 				<div class="form-group">
+					<div class="dropzone"></div>
+				</div>
+				<div class="form-group">
 					<button type="submit" class="btn btn-primary btn-block">Guardar Publicación</button>
 				</div>
 			</div>
@@ -93,11 +96,13 @@
 @stop
 
 @push('styles')
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.0.1/dropzone.css">
 	<link rel="stylesheet" href="/adminlte/plugins/datepicker/datepicker3.css">
 	<link rel="stylesheet" href="/adminlte/plugins/select2/select2.min.css">
 @endpush
 
 @push('scripts')
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.0.1/min/dropzone.min.js"></script>
 	<script src="https://cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
 	<script src="/adminlte/plugins/select2/select2.full.min.js"></script>
 	<script src="/adminlte/plugins/datepicker/bootstrap-datepicker.js"></script>
@@ -105,8 +110,28 @@
 	    $('#datepicker').datepicker({
 	      autoclose: true
 	    });
+	    
 	    $('.select2').select2();
+
 	    CKEDITOR.replace('editor');
+
+    	var myDropzone = new Dropzone('.dropzone', {
+    		url: '/admin/posts/{{ $post->url }}/photos',
+    		paramName: 'photo',
+    		// acceptedFiles: 'image/*',
+    		// maxFilesize: 2,
+    		headers: {
+    			'X-CSRF-TOKEN': '{{ csrf_token() }}'
+    		},
+    		dictDefaultMessage: 'Arrastra las fotos aquí para subirlas'
+    	});
+
+    	myDropzone.on('error', function(file, res){
+    		var msg = res.photo[0];
+    		$('.dz-error-message:last > span').text(msg);
+    	});
+
+    	Dropzone.autoDiscover = false;
 
 	</script>
 @endpush
