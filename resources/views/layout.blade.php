@@ -12,6 +12,7 @@
     <link href="/css/responsive.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    @stack('styles')
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -80,6 +81,8 @@
     </div>
 </footer>
   </section>
+  
+  
 
   <script>
       (function (window, document) {
@@ -122,9 +125,11 @@
       window.addEventListener(WINDOW_CHANGE_EVENT, closeMenu);
       })(this, this.document);
       
-      </script>
+</script> 
 
+@stack('scripts')
   
-
+</body>
+</html>
 
 

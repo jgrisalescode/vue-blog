@@ -118,8 +118,8 @@
     	var myDropzone = new Dropzone('.dropzone', {
     		url: '/admin/posts/{{ $post->url }}/photos',
     		paramName: 'photo',
-    		// acceptedFiles: 'image/*',
-    		// maxFilesize: 2,
+    		acceptedFiles: 'image/*',
+    		maxFilesize: 2,
     		headers: {
     			'X-CSRF-TOKEN': '{{ csrf_token() }}'
     		},
