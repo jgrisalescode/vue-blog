@@ -1,8 +1,10 @@
 @extends('layout')
 
 @section('content')
-
 <section class="posts container">
+@if (isset($title))
+    <h3>{{ $title }}</h3>
+@endif
 @foreach($posts as $post)
     <article class="post">
         @if ($post->photos->count() === 1)
@@ -29,7 +31,9 @@
                     <span class="c-gris">{{ $post->published_at->format('M d') }}</span>
                 </div>
                 <div class="post-category">
-                    <span class="category">{{ $post->category->name }}</span>
+                    <span class="category">
+                        <a href="{{ route('categories.show', $post->category) }}">{{ $post->category->name }}</a>
+                    </span>
                 </div>
             </header>
             <h1>{{ $post->title }}</h1>
@@ -41,7 +45,7 @@
                 </div>
                 <div class="tags container-flex">
                 @foreach($post->tags as $tag)
-                    <span class="tag c-gris">#{{ $tag->name }}</span>
+                    <span class="tag c-gris"><a href="{{ route('tags.show', $tag) }}">#{{ $tag->name }}</a></span>
                 @endforeach
                 </div>
             </footer>
