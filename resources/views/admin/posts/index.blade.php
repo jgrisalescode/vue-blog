@@ -37,9 +37,9 @@
 						<td>{{ $post->title }}</td>
 						<td>{{ $post->excerpt }}</td>
 						<td>
-							<a href="{{ route('posts.show', $post) }}" 
+							<a href="{{ route('posts.show', $post) }}"
 								class="btn btn-xs btn-default"
-								target="_blank" 
+								target="_blank"
 							><i class="fa fa-eye"></i></a>
 							<a href="{{ route('admin.posts.edit', $post) }}" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i></a>
 							<a href="#" class="btn btn-xs btn-danger"><i class="fa fa-times"></i></a>
@@ -47,7 +47,115 @@
 					</tr>
 				@endforeach
 			</tbody>
-			
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>rwerwe</td>
+					</tr>
+					<tr>
+						<td>rwerwe</td>
+					</tr>
+					<tr>
+						<td>rwerwe</td>
+					</tr>
+					<tr>
+						<td>rwerwe</td>
+					</tr>
+					<tr>
+						<td>rwerwe</td>
+					</tr>
+					<tr>
+						<td>rwerwe</td>
+					</tr>
+					<tr>
+						<td>rwerwe</td>
+					</tr>
+					<tr>
+						<td>rwerwe</td>
+					</tr>
+					<tr>
+						<td>rwerwe</td>
+					</tr>
+					<tr>
+						<td>rwerwe</td>
+					</tr>
+					<tr>
+						<td>rwerwe</td>
+					</tr>
+					<tr>
+						<td>rwerwe</td>
+					</tr>
+					<tr>
+						<td>rwerwe</td>
+					</tr>
+					<tr>
+						<td>rwerwe</td>
+					</tr>
+					<tr>
+						<td>rwerwe</td>
+					</tr>
+					<tr>
+						<td>rwerwe</td>
+					</tr>
+					<tr>
+						<td>rwerwe</td>
+					</tr>
+					<tr>
+						<td>rwerwe</td>
+					</tr>
+					<tr>
+						<td>rwerwe</td>
+					</tr>
+					<tr>
+						<td>rwerwe</td>
+					</tr>
+					<tr>
+						<td>rwerwe</td>
+					</tr>
+					<tr>
+						<td>rwerwe</td>
+					</tr>
+					<tr>
+						<td>rwerwe</td>
+					</tr>
+					<tr>
+						<td>rwerwe</td>
+					</tr>
+					<tr>
+						<td>rwerwe</td>
+					</tr>
+					<tr>
+						<td>rwerwe</td>
+					</tr>
+					<tr>
+						<td>rwerwe</td>
+					</tr>
+					<tr>
+						<td>rwerwe</td>
+					</tr>
+					<tr>
+						<td>rwerwe</td>
+					</tr>
+					<tr>
+						<td>rwerwe</td>
+					</tr>
+					<tr>
+						<td>rwerwe</td>
+					</tr>
+					<tr>
+						<td>rwerwe</td>
+					</tr>
+					<tr>
+						<td>rwerwe</td>
+					</tr>
+
+				</tbody>
+			</table>
 		</table>
 	</div>
 	<!-- /.box-body -->
@@ -56,7 +164,7 @@
 @stop
 
 @push('styles')
-	<link rel="stylesheet" href="/adminlte/plugins/datatables/dataTables.bootstrap.css"> 
+	<link rel="stylesheet" href="/adminlte/plugins/datatables/dataTables.bootstrap.css">
 @endpush
 
 @push('scripts')

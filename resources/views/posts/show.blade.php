@@ -3,7 +3,7 @@
 @section('content')
 <article class="post container">
     @if ($post->photos->count() === 1)
-        <figure><img src="{{ $post->photos->first()->url }}" class="img-responsive" alt=""></figure>
+        <figure><img src="{{ url($post->photos->first()->url) }}" class="img-responsive" alt=""></figure>
     @elseif($post->photos->count() > 1)
         @include('posts.carousel')
     @elseif($post->iframe)
@@ -22,7 +22,7 @@
         </header>
         <h1>{{ $post->title }}</h1>
         <div class="divider"></div>
-        
+
         <div class="image-w-text">
             {!! $post->body !!}
         </div>
