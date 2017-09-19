@@ -266,14 +266,14 @@ desired effect
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      
+
       @yield('header')
 
     </section>
 
     <!-- Main content -->
     <section class="content">
-      
+
       @if (session()->has('flash'))
           <div class="alert alert-success">{{ session('flash') }}</div>
       @endif
@@ -381,10 +381,14 @@ desired effect
 <!-- Bootstrap 3.3.6 -->
 <script src="/adminlte/bootstrap/js/bootstrap.min.js"></script>
 
+@unless(request()->is('admin/posts/*'))
+    @include('admin.posts.create')
+@endunless
+
 @stack('scripts')
 
 <!-- AdminLTE App -->
 <script src="/adminlte/js/app.min.js"></script>
-@include('admin.posts.create')
+
 </body>
 </html>
