@@ -27,29 +27,7 @@
       <figure class="logo">
         <img src="/img/logo.png" alt="">
       </figure>
-      <nav class="custom-wrapper" id="menu">
-        <div class="pure-menu">
-          <a href="#" class="custom-toggle btn-bar" id="toggle"></a>
-        </div>
-        <ul class="container-flex list-unstyled">
-          <li class="pure-menu-item"><a href="/" class="pure-menu-link c-gris-2 text-uppercase active">Home</a></li>
-          <li class="pure-menu-item"><a href="#" class="pure-menu-link c-gris-2 text-uppercase">About</a></li>
-          <li class="pure-menu-item"><a href="#" class="pure-menu-link c-gris-2 text-uppercase">Archive</a></li>
-          <li class="pure-menu-item"><a href="#" class="pure-menu-link c-gris-2 text-uppercase">Contact</a></li>
-        </ul>
-      </nav>
-        <!--<nav>
-        <div class="menu-bar">
-          <a href="#" id="btn-bar"></a>
-        </div>
-        
-          <ul class="container-flex list-unstyled">
-            <li><a href="#" class="c-gris-2 text-uppercase active">home</a></li>
-            <li><a href="#" class="c-gris-2 text-uppercase">about</a></li>
-            <li><a href="#" class="c-gris-2 text-uppercase">archive</a></li>
-            <li><a href="#" class="c-gris-2 text-uppercase">contact</a></li>
-          </ul>
-        </nav>-->
+      @include('partials.nav')
     </div>
   </header>
 
@@ -81,14 +59,14 @@
     </div>
 </footer>
   </section>
-  
-  
+
+
 
   <script>
       (function (window, document) {
       var menu = document.getElementById('menu'),
           WINDOW_CHANGE_EVENT = ('onorientationchange' in window) ? 'orientationchange':'resize';
-      
+
       function toggleHorizontal() {
           [].forEach.call(
               document.getElementById('menu').querySelectorAll('.custom-can-transform'),
@@ -97,7 +75,7 @@
               }
           );
       };
-      
+
       function toggleMenu() {
           // set timeout so that the panel has a chance to roll up
           // before the menu switches states
@@ -110,25 +88,25 @@
           menu.classList.toggle('open');
           document.getElementById('toggle').classList.toggle('x');
       };
-      
+
       function closeMenu() {
           if (menu.classList.contains('open')) {
               toggleMenu();
           }
       }
-      
+
       document.getElementById('toggle').addEventListener('click', function (e) {
           toggleMenu();
           e.preventDefault();
       });
-      
+
       window.addEventListener(WINDOW_CHANGE_EVENT, closeMenu);
       })(this, this.document);
-      
-</script> 
+
+</script>
 
 @stack('scripts')
-  
+
 </body>
 </html>
 
