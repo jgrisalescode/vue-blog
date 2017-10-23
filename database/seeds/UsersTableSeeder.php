@@ -15,11 +15,17 @@ class UsersTableSeeder extends Seeder
         User::truncate();
 
         $user = new User;
-        $user->name = 'Jorge Luis';
+        $user->name = 'Jorge';
         $user->email = 'jorge@aprendible.com';
         $user->password = bcrypt('123123');
         $user->save();
-  
+
+        $user = new User;
+        $user->name = 'Luis';
+        $user->email = 'luis@aprendible.com';
+        $user->password = bcrypt('123123');
+        $user->save();
+
     }
 }
 
