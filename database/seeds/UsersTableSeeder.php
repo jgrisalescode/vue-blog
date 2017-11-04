@@ -20,18 +20,11 @@ class UsersTableSeeder extends Seeder
 
         $adminRole = Role::create(['name' => 'Admin']);
         $writerRole = Role::create(['name' => 'Writer']);
-        $postsManagerRole = Role::create(['name' => 'Posts manager']);
 
         $viewPostsPermission = Permission::create(['name' => 'View posts']);
         $createPostsPermission = Permission::create(['name' => 'Create posts']);
         $updatePostsPermission = Permission::create(['name' => 'Update posts']);
         $deletePostsPermission = Permission::create(['name' => 'Delete posts']);
-
-        $postsManagerRole->givePermissionTo([
-            $viewPostsPermission, $createPostsPermission,
-            $updatePostsPermission, $deletePostsPermission
-        ]);
-
 
         $admin = new User;
         $admin->name = 'Jorge';
