@@ -19,6 +19,8 @@ function(){
 	Route::resource('posts', 'PostsController', ['except' => 'show', 'as' => 'admin']);
 	Route::resource('users', 'UsersController', ['as' => 'admin']);
 
+    Route::put('users/{user}/roles', 'UsersRolesController@update')->name('admin.users.roles.update');
+
 	Route::post('posts/{post}/photos', 'PhotosController@store')->name('admin.posts.photos.store');
 	Route::delete('photos/{photo}', 'PhotosController@destroy')->name('admin.photos.destroy');
 
