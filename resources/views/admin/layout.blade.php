@@ -186,7 +186,7 @@ desired effect
               <li class="user-header">
                 <img src="/adminlte/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                 <p>
-                  {{ auth()->user()->name }} - {{ auth()->user()->getRoleNames()->implode(', ') }}
+                  {{ auth()->user()->name }} - {{ auth()->user()->getRoleDisplayNames() }}
                   <small>Desde {{ auth()->user()->created_at->format('d/M/Y') }}</small>
                 </p>
               </li>
