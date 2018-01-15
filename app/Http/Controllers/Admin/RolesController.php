@@ -17,6 +17,8 @@ class RolesController extends Controller
      */
     public function index()
     {
+        $this->authorize('view', new Role);
+
         return view('admin.roles.index', [
             'roles' => Role::all()
         ]);
@@ -29,8 +31,10 @@ class RolesController extends Controller
      */
     public function create()
     {
+        $this->authorize('create', $role = new Role);
+
         return view('admin.roles.create', [
-            'role' => new Role,
+            'role' => $role,
             'permissions' => Permission::pluck('name', 'id')
         ]);
     }
@@ -43,6 +47,8 @@ class RolesController extends Controller
      */
     public function store(SaveRoleRequest $request)
     {
+        $this->authorize('create', new Role);
+
         $role = Role::create($request->validated());
 
         if ($request->has('permissions'))
@@ -54,17 +60,6 @@ class RolesController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
@@ -72,6 +67,8 @@ class RolesController extends Controller
      */
     public function edit(Role $role)
     {
+        $this->authorize('update', $role);
+
         return view('admin.roles.edit', [
             'role' => $role,
             'permissions' => Permission::pluck('name', 'id')
@@ -87,6 +84,8 @@ class RolesController extends Controller
      */
     public function update(SaveRoleRequest $request, Role $role)
     {
+        $this->authorize('update', $role);
+
         $role->update($request->validated());
 
         $role->permissions()->detach();
@@ -107,12 +106,7 @@ class RolesController extends Controller
      */
     public function destroy(Role $role)
     {
-        if( $role->id === 1)
-        {
-            throw new \Illuminate\Auth\Access\AuthorizationException('No se puede eliminar este role');
-        }
-
-        // $this->authorize('delete', $role);
+        $this->authorize('delete', $role);
 
         $role->delete();
 
