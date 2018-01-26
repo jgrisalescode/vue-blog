@@ -21,7 +21,11 @@ class PagesController extends Controller
 
     public function archive()
     {
-        return view('pages.archive');
+        return view('pages.archive', [
+            'authors' => User::latest()->take(4)->get(),
+            'categories' => Category::take(7)->get(),
+            'posts' => Post::latest('published_at')->take(5)->get()
+        ]);
     }
 
     public function contact()
