@@ -1,5 +1,5 @@
 # Guía para instalar el proyecto
-Este es un proyecto de prueba realizado en el curso **Desarrollo de una red social con Laravel & TDD**
+Este es un proyecto de prueba realizado en el curso **Desarrollo de un blog con manejo de roles y permisos**
 
 1. Descarga el repositorio
 2. Descromprime la carpeta dentro del directorio de Valet/Laragon
