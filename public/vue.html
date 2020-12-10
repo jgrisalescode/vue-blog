@@ -7,15 +7,30 @@
   </head>
   <body>
     <div id="app">
-      <h1>Hola {{ message }}</h1>
+      <h1 v-if="message.length > 2">Hola {{ message }}</h1>
+      <h1 v-else>Por favor escribe tu nombre</h1>
       <input type="text" v-model="message" />
+
+      <h2>Lista de tareas</h2>
+      <ul>
+        <li v-for="tarea in tareas">
+          <span v-text="tarea.title"></span>
+          <small v-if="tarea.complited">Completa</small>
+          <small v-else>Incompleta</small>
+        </li>
+      </ul>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
     <script>
       const app = new Vue({
         el: "#app",
         data: {
-          message: "Apprendible"
+          message: "Apprendible",
+          tareas: [
+            { title: "Aprende Laravel", complited: true },
+            { title: "Aprende VueJS", complited: true },
+            { title: "Aprende PHP", complited: false }
+          ]
         }
       })
     </script>
