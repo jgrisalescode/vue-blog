@@ -10,6 +10,7 @@
       <h1 v-if="message.length > 2">Hola {{ message }}</h1>
       <h1 v-else>Por favor escribe tu nombre</h1>
       <input type="text" v-model="message" />
+      <button @click="reverse">Invertir</button>
 
       <h2>Lista de tareas</h2>
       <ul>
@@ -24,6 +25,7 @@
     <script>
       const app = new Vue({
         el: "#app",
+
         data: {
           message: "Apprendible",
           tareas: [
@@ -31,6 +33,12 @@
             { title: "Aprende VueJS", complited: true },
             { title: "Aprende PHP", complited: false }
           ]
+        },
+
+        methods: {
+          reverse: function () {
+            this.message = this.message.split("").reverse().join("")
+          }
         }
       })
     </script>
