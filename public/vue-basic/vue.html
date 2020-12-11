@@ -10,24 +10,7 @@
   <body>
     <div class="container">
       <div id="app">
-        <User name="Carlos" last-name="Alvarez"></User>
-        <User name="Julian" last-name="Grisales"></User>
-        <!-- <h1>Lista de tareas</h1>
-        <p>Tareas completas: {{complitedTasks}}</p>
-        <p>Tareas incompletas: {{incomplitedTasks}}</p>
-        <ul>
-          <li v-for="task in tasks">
-            <span v-text="task.title"></span>
-            <span class="check" @click="task.complited = false" v-if="task.complited">✔</span>
-            <span class="check" @click="task.complited = true" v-else>❌</span>
-          </li>
-          <li class="form-inline">
-            <input @keyup.enter="addTask" class="form-control" type="text" v-model="newTask" />
-          </li>
-        </ul> -->
-        <pre class="bg-dark text-warning p-2">
-          {{$data}}
-        </pre>
+        <Tasks></Tasks>
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
