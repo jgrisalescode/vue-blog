@@ -1,3 +1,22 @@
+Vue.component('User', {
+  props: ['name', 'lastName'],
+
+  data: function () {
+    return {
+      app: {
+        name: 'Aprendible'
+      }
+    }
+  },
+
+  template: `<div>
+    <h1>Usuario de: {{app.name}}</h1>
+    <h2>Nombre: {{name}} {{lastName}}</h2>
+    <input v-model="name"/>
+    <input v-model="app.name"/>
+  </div>`
+})
+
 const app = new Vue({
   el: "#app",
 

@@ -10,7 +10,9 @@
   <body>
     <div class="container">
       <div id="app">
-        <h1>Lista de tareas</h1>
+        <User name="Carlos" last-name="Alvarez"></User>
+        <User name="Julian" last-name="Grisales"></User>
+        <!-- <h1>Lista de tareas</h1>
         <p>Tareas completas: {{complitedTasks}}</p>
         <p>Tareas incompletas: {{incomplitedTasks}}</p>
         <ul>
@@ -18,14 +20,11 @@
             <span v-text="task.title"></span>
             <span class="check" @click="task.complited = false" v-if="task.complited">✔</span>
             <span class="check" @click="task.complited = true" v-else>❌</span>
-            <!-- <small v-if="task.complited">Completa</small>
-            <small v-else>Incompleta</small> -->
           </li>
           <li class="form-inline">
             <input @keyup.enter="addTask" class="form-control" type="text" v-model="newTask" />
-            <!-- <button @click="addTask" class="btn btn-primary">+</button> -->
           </li>
-        </ul>
+        </ul> -->
         <pre class="bg-dark text-warning p-2">
           {{$data}}
         </pre>
